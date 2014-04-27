@@ -153,7 +153,7 @@ function! EasyMotion#WB(visualmode, direction) " {{{
     "FIXME: inconsistent with default vim motion
     "FIXED: -> EasyMotion#WBK()
     let s:current.is_operator = mode(1) ==# 'no' ? 1: 0
-    call s:EasyMotion('\(\<.\|^$\)', a:direction, a:visualmode ? visualmode() : '', 0)
+    call s:EasyMotion('\(\<.\|^$\|\(_\)\@<=[a-Z]\)', a:direction, a:visualmode ? visualmode() : '', 0)
     return s:EasyMotion_is_cancelled
 endfunction " }}}
 function! EasyMotion#WBW(visualmode, direction) " {{{
